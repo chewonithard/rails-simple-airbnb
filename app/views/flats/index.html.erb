@@ -1,0 +1,33 @@
+<h1>Index</h1>
+<%# <div class="navbar-minimalist">
+  <img src="images/logo.png">
+</div> %>
+<%= link_to 'new', new_flat_path, class: "btn btn-primary new" %>
+
+<div class='main-container'>
+  <div class="cards">
+    <% @flats.each do |flat| %>
+    <div class="card rounded p-3 my-1">
+    <img class="card-img-top" src="https://source.unsplash.com/random/80x40">
+    <div class="card-content">
+      <div class="card-title">
+        <h2><%= "#{flat.name}" %></h2>
+      </div>
+      <h3><%= "#{flat.address}" %></h3>
+      <div class='flex'>
+        <div class='flex'>
+        <i class="material-icons mr-2">people</i>
+        <span><%= "#{flat.price_per_night}" %></span>
+        </div>
+        <div class='flex'>
+        <i class="material-icons mr-2">euro_symbol</i>
+        <span><%= "#{flat.number_of_guests}" %></span>
+        </div>
+      </div>
+    </div>
+    </div>
+    <% end %>
+  </div>
+</div>
+
+<%= link_to 'new', new_flat_path, class: "btn btn-primary" %>
